@@ -5,7 +5,7 @@
 
 # Instalation #
 ```
-composer require elastic-email/web-api-client
+composer require simexis/elastic-email-web-api
 ```
 # API #
 API documentation you can find on [Elastic Email website](https://api.elasticemail.com/public/help).
