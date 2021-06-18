@@ -538,7 +538,7 @@ class Account extends \ElasticEmailClient\ElasticRequest
      * @param string $taxCode Code used for tax purposes.
      * @param string $phone Phone number
      */
-    public function UpdateProfile($firstName, $lastName, $address1, $city, $state, $zip, $countryID, $marketingConsent = null, $address2 = null, $company = null, $website = null, $logoUrl = null, $taxCode = null, $phone = null) {
+    public function UpdateProfile($firstName, $lastName, $countryID, $state, $city, $zip, $address1, $phone = null, $company = null, $website = null, $marketingConsent = null, $address2 = null, $logoUrl = null, $taxCode = null) {
         return $this->sendRequest('account/updateprofile', array(
                     'firstName' => $firstName,
                     'lastName' => $lastName,

@@ -1,6 +1,8 @@
 <?php
 	namespace ElasticEmailClient; 
 
+    use Exception;
+
     abstract class ElasticRequest {
         /**
          * @var \ElasticEmailClient\ApiConfiguration ApiConfiguration
@@ -31,16 +33,16 @@
          * @param string $method
          * @param array $attachments
          * @return \Psr\Http\Message\ResponseInterface
-         * @throws \Exception
+         * @throws Exception
          */
         protected function sendRequest(string $url, array $data = [], string $method = 'POST', array $attachments = [])
         {
             $method = strtoupper($method);
 
-                    if (!in_array($method, \ElasticEmailClient\ApiConfiguration::AVAILABLE_REQUEST_METHODS))
-                    {
-                        throw new \Exception('Unallowed request method type');
-                    }
+            if (!in_array($method, \ElasticEmailClient\ApiConfiguration::AVAILABLE_REQUEST_METHODS))
+            {
+                throw new ElasticException('Unallowed request method type');
+            }
 
             $options = [];
             $data['apikey'] = $this->configuration->getApiKey();
@@ -61,12 +63,12 @@
             {
                 $response = $this->httpClient->request($method, $url, $options);
                 $resp = json_decode($response->getBody()->getContents());
-            } catch (\Exception $e) {
-                throw $e;
+            } catch (Exception $e) {
+                throw new RequestException($e->getMessage(), $e->getCode(), $e);
             }
 
             if (!$resp->success) {
-                throw new \Exception($resp->error);
+                throw new ElasticException($resp->error);
             }
 
             if (isset($resp->data) && $resp->data) { return $resp->data; }
