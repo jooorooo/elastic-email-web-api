@@ -1,5 +1,8 @@
 **This library allows you to quickly and easily use the Elastic Email Web API v2 via PHP.**
 
+# Original clone from #
+* [ElasticEmail.WebApiClient-php](https://github.com/ElasticEmail/ElasticEmail.WebApiClient-php)
+
 # Prerequisites #
 * [An Elastic Email account](https://elasticemail.com/account/)
 
