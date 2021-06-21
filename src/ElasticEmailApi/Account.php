@@ -594,9 +594,20 @@ class Account extends \ElasticEmailClient\ElasticRequest
      * @return \Psr\Http\Message\ResponseInterface
      * @throws \Exception
      */
-    public function UpdateSubAccountSendingPermission($sendingPermission = null) {
+    public function UpdateSubAccountSendingPermission($subAccountEmail, $sendingPermission = null) {
         return $this->sendRequest('account/updatesubaccountsettings', array(
-                    'sendingPermission' => $sendingPermission));
+            'requiresEmailCredits' => false,
+            'allow2fa' => null,
+            'monthlyRefillCredits' => 0,
+            'dailySendLimit' => null,
+            'emailSizeLimit' => 10,
+            'enablePrivateIPRequest' => null,
+            'maxContacts' => 0,
+            'subAccountEmail' => $subAccountEmail,
+            'publicAccountID' => null,
+            'sendingPermission' => $sendingPermission,
+            'enableContactFeatures' => null,
+            'poolName' => null));
     }
 
     /**

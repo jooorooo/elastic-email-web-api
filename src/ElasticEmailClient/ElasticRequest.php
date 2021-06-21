@@ -71,7 +71,9 @@
                 throw new ElasticException($resp->error);
             }
 
-            if (isset($resp->data) && $resp->data) { return $resp->data; }
+            if (!empty($resp->data)) {
+                return $resp->data;
+            }
 
             return $resp;
         }
