@@ -589,6 +589,17 @@ class Account extends \ElasticEmailClient\ElasticRequest
     }
 
     /**
+     * Updates settings of specified subaccount
+     * @param ?\ElasticEmailEnums\SendingPermission $sendingPermission Sending permission setting for Account
+     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \Exception
+     */
+    public function UpdateSubAccountSendingPermission($sendingPermission = null) {
+        return $this->sendRequest('account/updatesubaccountsettings', array(
+                    'sendingPermission' => $sendingPermission));
+    }
+
+    /**
      * Update notification webhook
      * @param string $apikey ApiKey that gives you access to our SMTP and HTTP API's.
      * @param string $webhookID 
