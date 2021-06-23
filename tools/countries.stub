@@ -4,7 +4,7 @@ namespace ElasticEmailData;
 
 class Countries
 {
-    protected static $countries = @COUNTRIES@;
+    protected static $countries = '@COUNTRIES@';
 
     protected function __construct()
     {

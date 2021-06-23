@@ -25,5 +25,5 @@ uasort($a, function ($a, $b) {
 });
 
 $object = file_get_contents(__DIR__ . '/countries.stub');
-$object = str_replace('@COUNTRIES@', str_replace(["\r", "\n", "\t"], "", var_export($a, true)), $object);
+$object = str_replace("'@COUNTRIES@'", str_replace(["\r", "\n", "\t"], "", var_export($a, true)), $object);
 var_dump(file_put_contents(__DIR__ . '/../src/ElasticEmailData/Countries.php', $object));
