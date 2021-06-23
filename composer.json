@@ -20,7 +20,8 @@
         "psr-4": {
             "ElasticEmailApi\\": "src/ElasticEmailApi",
             "ElasticEmailClient\\": "src/ElasticEmailClient",
-            "ElasticEmailEnums\\": "src/ElasticEmailEnums"
+            "ElasticEmailEnums\\": "src/ElasticEmailEnums",
+            "ElasticEmailData\\": "src/ElasticEmailData"
         }
     }
 }
