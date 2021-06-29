@@ -21,6 +21,14 @@ class Countries
         return static::$countries[$code] ?? null;
     }
 
+    public static function getById($id)
+    {
+        $array = array_filter(static::$countries, function($value) use($id) {
+            return isset($value['CountryID']) && $value['CountryID'] == $id;
+        });
+        return array_shift($array);
+    }
+
     public static function getIdByCode($code)
     {
         return static::getByCode($code)['CountryID'] ?? null;
