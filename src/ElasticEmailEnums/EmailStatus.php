@@ -6,56 +6,56 @@ class EmailStatus
     /**
      * Email address this email was sent from.
      */
-    public /*string*/ $From;
+    public /*string*/ $from;
 
     /**
      * Email address this email was sent to.
      */
-    public /*string*/ $To;
+    public /*string*/ $to;
 
     /**
      * Date the email was submitted.
      */
-    public /*DateTime*/ $Date;
+    public /*DateTime*/ $date;
 
     /**
      * Value of email's status
      */
-    public /*\ElasticEmailEnums\LogJobStatus*/ $Status;
+    public /*\ElasticEmailEnums\LogJobStatus*/ $status;
 
     /**
      * Name of email's status
      */
-    public /*string*/ $StatusName;
+    public /*string*/ $statusname;
 
     /**
      * Date of last status change.
      */
-    public /*DateTime*/ $StatusChangeDate;
+    public /*DateTime*/ $Statuschangedate;
 
     /**
      * Date when the email was sent
      */
-    public /*DateTime*/ $DateSent;
+    public /*DateTime*/ $datesent;
 
     /**
      * Date when the email changed the status to 'opened'
      */
-    public /*?DateTime*/ $DateOpened;
+    public /*?DateTime*/ $dateopened;
 
     /**
      * Date when the email changed the status to 'clicked'
      */
-    public /*?DateTime*/ $DateClicked;
+    public /*?DateTime*/ $dateclicked;
 
     /**
      * Detailed error or bounced message.
      */
-    public /*string*/ $ErrorMessage;
+    public /*string*/ $errormessage;
 
     /**
      * ID number of transaction
      */
-    public /*Guid*/ $TransactionID;
+    public /*Guid*/ $transactionid;
 
 }
